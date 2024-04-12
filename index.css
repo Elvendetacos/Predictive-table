@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    background-color: #282434;
+}
+
+.part_rigth{
+    width: 20%;
+    height: 100vh;
+    background-color: #221e2c;
+}
+
+.text{
+    width: 100%;
+    height: 70%;
+}
+
+.text textarea{
+    width: 90%;
+    padding: 3%;
+    height: 100%;
+    resize: none;
+    border: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    outline: none;
+    background-color: #282434;
+    color: white;
+}
+
+::-webkit-scrollbar {display: none;}
+
+.console{
+    width: 100%;
+    height: 30%;
+    background-color: #282434;
+    box-shadow: 0 -5px 5px -5px rgba(102, 102, 102, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.console pre{
+    width: 90%;
+    height: 50%;
+    overflow: scroll;
+    padding: 5%;
+    font-size: 12px;
+    color: white;
+}
+
+.mario{
+    font-weight: bold;
+}
+
+.conteiner{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 80%;
+}
+
+.triangle {
+    width: 80%;
+    height: 30px;
+    background-color: #282434;
+    color: white;
+    margin-left: 10%;
+    margin-top: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: #282434 1px solid;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px 0px rgba(102, 102, 102, 0.5);
+}
+
+.triangle:active{
+    background-color: #221e2c;
+    translate: 1px 1px;
+    box-shadow: none;
+}

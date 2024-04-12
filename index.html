@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador Sintáctico</title>
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="part_rigth">
+        <button onclick="analize()" class="triangle">Run</button>
+    </div>
+    <div class="conteiner">
+        <div class="text">
+            <textarea name="" id="text"></textarea>
+        </div>
+        <div class="console">
+            <pre id="juan"></pre>
+            <pre id="mario"></pre>
+        </div>
+    </div>
+
+    <script src="analizer.js"></script>
+    <script>
+        function analize(){
+            let input = document.getElementById('text').value;
+            let tokens = input.split(" ");
+
+            for (let i = 0; i < tokens.length; i++) {
+                if (tokens[i] === "alter" && tokens[i + 1] === "table") {
+                    tokens[i] = "'alter table'";
+                    tokens.splice(i + 1, 1);
+                }
+            }
+
+            var result = predictiveParser(tokens);
+            document.getElementById('juan').innerText = JSON.stringify(result[1], null, 2);
+            console.log(result);
+            document.getElementById('mario').innerText = JSON.stringify(result[0], null, 2);
+        }
+    </script>
+</body>
+</html>
